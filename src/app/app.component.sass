@@ -1,5 +1,6 @@
 @import "~src/sass/_variables.sass"
 @import "~src/sass/_mixins.sass"
+@import '~@angular/material/theming'
 
 :host 
     width: 100%
@@ -7,12 +8,11 @@
     justify-content: center
     align-items: center
 
+.main
+    padding: min(10vh, 100px) max(10vw, 40px)
+
 .header 
     position: relative
-    padding: min(10vh, 100px) max(10vw, 40px)
-    justify-content: center
-    align-items: center
-    align-self: center
     min-height: 30vh
 
 //Create fluid font sizes
@@ -31,5 +31,40 @@
     line-height: 40px
     margin: 20px 0
     @include  fluid-font-size(25px, 35px)
+
+.section-title
+    color: $color-blue
+    font-weight: 100
+    margin-top: min(10vh, 100px)
+    @include  fluid-font-size(20px, 30px)
+    color: $color-blue--light
+
+.card-container 
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+
+
+.card 
+  margin:  40px 40px 0 0
+  flex: 1 1 0
+  cursor: pointer
+  &:hover 
+    @include mat-elevation(8)
+  .card-subtitle 
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    .tag
+        padding-right: 20px
+        .icon
+            position: relative
+            transform: scale(0.8)
+            top: 6px
+            right: 2px
+
+  
+
+
+
 
 

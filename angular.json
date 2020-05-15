@@ -30,6 +30,7 @@
               "src/site.webmanifest"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.sass"
             ],
             "stylePreprocessorOptions": {

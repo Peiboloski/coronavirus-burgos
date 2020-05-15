@@ -1,4 +1,18 @@
+<div class="main">
 <header class="header">
     <h1 class="title">Coronavirus Burgos</h1>
     <h2 class="subtitle">Situación epidemiológico de la pandemia en la ciudad de Burgos</h2>
 </header>
+<div class="section-title">Consulta la evolución de la enfermedad</div>
+<section class="card-container">
+    <mat-card *ngFor="let graph of graphs" (click)="onGraphClicked(graph.url)" matRipple class="card">
+        <mat-card-header>
+            <mat-card-title>{{graph.title}}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">
+                <div class="tag" *ngIf="graph.location"><mat-icon class="icon" svgIcon="location"></mat-icon><span>{{graph.location}}</span></div>
+                <div class="tag" *ngIf="graph.hospital"><mat-icon class="icon" svgIcon="hospital"></mat-icon><span>{{graph.hospital}}</span></div>
+            </mat-card-subtitle>
+          </mat-card-header>
+    </mat-card>
+</section>
+</div>
