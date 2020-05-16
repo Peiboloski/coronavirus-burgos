@@ -27,7 +27,9 @@
               "src/favicon.ico",
               "src/assets",
               "src/favicon",
-              "src/site.webmanifest"
+              "src/site.webmanifest",
+              "src/sitemap.xml",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/custom-theme.scss",
@@ -67,7 +69,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -99,7 +103,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/favicon",
-              "src/site.webmanifest"
+              "src/site.webmanifest",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.sass"

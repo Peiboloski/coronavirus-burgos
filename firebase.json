@@ -1,0 +1,24 @@
+{
+  "hosting": {
+    "public": "dist/coronavirus-burgos",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "sitemap.xml",
+        "destination": "/sitemap.xml"
+      },
+      {
+        "source": "site.webmanifest",
+        "destination": "/site.webmanifest"
+      }
+    ]
+  }
+}

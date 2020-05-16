@@ -1,10 +1,10 @@
 <div class="main">
-<header class="header">
+<header class="header margin--lateral">
     <h1 class="title">Coronavirus Burgos</h1>
-    <h2 class="subtitle">Situación epidemiológico de la pandemia en la ciudad de Burgos</h2>
+    <h2 class="subtitle">Evolución de la pandemia en la ciudad de Burgos</h2>
 </header>
-<div class="section-title">Consulta la evolución de la enfermedad</div>
-<section class="card-container">
+<div class="section-title margin--lateral">Consulta la evolución de la enfermedad</div>
+<section class="card-container margin--lateral">
     <mat-card *ngFor="let graph of graphs" (click)="onGraphClicked(graph.url)" matRipple class="card">
         <mat-card-header>
             <mat-card-title>{{graph.title}}</mat-card-title>
@@ -15,4 +15,7 @@
           </mat-card-header>
     </mat-card>
 </section>
+<footer class="footer">
+    <p>Made by <a href="https://www.linkedin.com/in/pablodelgadogarcia/">@peiboloski</a></p>
+</footer>
 </div>
