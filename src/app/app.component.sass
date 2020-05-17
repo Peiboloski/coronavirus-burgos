@@ -2,18 +2,19 @@
 @import "~src/sass/_mixins.sass"
 @import '~@angular/material/theming'
 
-:host 
-    width: 100%
-    position: relative
-    justify-content: center
-    align-items: center
+:host
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 100vh
 
 .main
-     padding: 20px 0 0
+     position: relative
+     padding: 40px 0 0
      padding: min(10vh, 100px) 0 0
 
 .margin--lateral
-    padding: 0 20px
+    padding: 0 40px
     padding: 0 max(10vw, 40px)
 
 .header 
@@ -34,7 +35,7 @@
     font-weight: 100
     text-align: justify
     line-height: 40px
-    margin: 20px 0
+    margin: 40px 0
     @include  fluid-font-size(25px, 35px)
 
 .section-title
@@ -68,15 +69,16 @@
             right: 2px
 
 .footer
-    margin-top: 40px
+    margin-top: 60px
     margin-top: min(10vh, 100px)
     padding: 40px 0
     padding: min(10vh, 50px) 0
-    bottom: 0
     background: $color-background--footer
     display: flex
     text-align: center
     justify-content: center
+    bottom: 0
+    width: 100%
     @include  fluid-font-size(15px, 20px)
     p
         margin: auto
