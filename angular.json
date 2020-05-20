@@ -28,6 +28,7 @@
               "src/assets",
               "src/favicon",
               "src/site.webmanifest",
+              "src/picture.png",
               "src/sitemap.xml",
               "src/manifest.webmanifest"
             ],

@@ -1,0 +1,31 @@
+@import "~src/sass/_variables.sass"
+@import "~src/sass/_mixins.sass"
+:host
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+svg
+    width: 80%
+    height: 80%
+    position: relative
+    circle
+        fill: none
+        stroke-width: 5%
+        transform: translateY(5%)
+        stroke: $color-background--footer
+        &:nth-child(2)
+            stroke-width: 3%
+            stroke: red
+            stroke-dasharray: 252%
+            stroke-dashoffset: calc(  252% - ( (252% * 50) / 100 ))
+            stroke-linecap: round
+.percentage
+    position: absolute
+    margin: auto
+    color: $color-grey
+    font-weight: 200
+    .percentage-number
+        @include  fluid-font-size(30px, 50px)
+    .percentage-symbol
+        @include  fluid-font-size(15px, 35px)

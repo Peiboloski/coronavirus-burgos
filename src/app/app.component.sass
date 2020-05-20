@@ -36,7 +36,7 @@
     text-align: justify
     line-height: 40px
     margin: 40px 0
-    @include  fluid-font-size(25px, 35px)
+    @include  fluid-font-size(20px, 35px)
 
 .section-title
     color: $color-grey
@@ -45,28 +45,42 @@
     margin-top: min(20vh, 100px)
     @include  fluid-font-size(20px, 30px)
 
+.widget-container 
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr))
+  grid-auto-rows: 1fr
+  &::before
+    content: ''
+    width: 0px
+    padding-top: 100%
+    grid-row: 1 / 1
+    grid-column: 1 / 1
+  *:first-child 
+    grid-row: 1 / 1
+    grid-column: 1 / 1
+
+
 .card-container 
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
 
-
-.card 
-  margin: 40px 40px 0 0
-  flex: 1 1 0
-  cursor: pointer
-  &:hover 
-    @include mat-elevation(8)
-  .card-subtitle 
-    display: flex
-    flex-wrap: wrap
-    justify-content: flex-start
-    .tag
-        padding-right: 20px
-        .icon
-            position: relative
-            transform: scale(0.8)
-            top: 6px
-            right: 2px
+  .card 
+    margin: 40px 40px 0 0
+    flex: 1 1 0
+    cursor: pointer
+    &:hover 
+        @include mat-elevation(8)
+    .card-subtitle 
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        .tag
+            padding-right: 20px
+            .icon
+                position: relative
+                transform: scale(0.8)
+                top: 6px
+                right: 2px
 
 .footer
     margin-top: 60px

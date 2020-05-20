@@ -10,10 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PercentageComponent } from './percentage/percentage.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PercentageComponent
   ],
   imports: [
     AppRoutingModule,

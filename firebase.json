@@ -9,6 +9,10 @@
     "rewrites": [
       {
         "source": "**",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=60"
+        } ],
         "destination": "/index.html"
       },
       {
@@ -18,6 +22,14 @@
       {
         "source": "site.webmanifest",
         "destination": "/site.webmanifest"
+      },
+      {
+        "source": "picture.png",
+        "destination": "/picture.png",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=60"
+        } ]
       }
     ]
   }

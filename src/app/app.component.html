@@ -1,8 +1,16 @@
 <div class="main">
 <header class="header margin--lateral">
-    <h1 class="title">Coronavirus Burgos</h1>
-    <h2 class="subtitle">Evolución de la pandemia en la ciudad de Burgos</h2>
+    <div class="title">Coronavirus Burgos</div>
+    <h1 class="subtitle">Evolución de la pandemia de Coronavirus en la ciudad de Burgos. Actualización diaria de la situación de ocupación de los hospitales, nuevos contagios detectados, altas y fallecimientos.</h1>
 </header>
+<section class="margin--lateral widget-container">
+    <app-percentage></app-percentage>
+    <app-percentage></app-percentage>
+    <app-percentage></app-percentage>
+    <app-percentage></app-percentage>
+    <app-percentage></app-percentage>
+    <app-percentage></app-percentage>
+</section>
 <div class="section-title margin--lateral">Consulta la evolución de la enfermedad</div>
 <section class="card-container margin--lateral">
     <mat-card *ngFor="let graph of graphs" (click)="onGraphClicked(graph.url)" matRipple class="card">
@@ -17,5 +25,5 @@
 </section>
 </div>
 <footer class="footer">
-    <p>Made by <a href="https://www.linkedin.com/in/pablodelgadogarcia/">@peiboloski</a></p>
+    <p>Made by <a href="https://www.linkedin.com/in/pablodelgadogarcia/ " rel="nofollow">@peiboloski</a></p>
 </footer>
