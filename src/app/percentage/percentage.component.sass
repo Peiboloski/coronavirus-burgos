@@ -16,10 +16,17 @@ svg
         stroke: $color-background--footer
         &:nth-child(2)
             stroke-width: 3%
-            stroke: red
             stroke-dasharray: 252%
-            stroke-dashoffset: calc(  252% - ( (252% * 50) / 100 ))
+            stroke-dashoffset: calc(  252% - ( (252% * var(--percentage))  / 100 ))
             stroke-linecap: round
+            &.percentage--low
+                stroke: green
+            &.percentage--medium
+                stroke: yellow
+            &.percentage--high
+                stroke: red
+                 
+
 .percentage
     position: absolute
     margin: auto

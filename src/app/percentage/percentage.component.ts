@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PercentageComponent implements OnInit {
 
+  public percentage = 76;
+  public isPercentageLow(): boolean {
+    return this.percentage <= 50;
+  }
+  public isPercentageMedium(): boolean {
+    return this.percentage > 50 && this.percentage <= 75;
+  }
+  public isPercentageHigh(): boolean {
+    return this.percentage > 75;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
