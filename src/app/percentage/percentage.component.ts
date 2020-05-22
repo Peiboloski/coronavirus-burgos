@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-percentage',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PercentageComponent implements OnInit {
 
-  public percentage = 76;
+  @Input() 
+  public percentage: number;
   public isPercentageLow(): boolean {
     return this.percentage <= 50;
   }

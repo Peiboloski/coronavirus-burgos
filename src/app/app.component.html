@@ -1,17 +1,32 @@
 <div class="main">
 <header class="header margin--lateral">
     <div class="title">Coronavirus Burgos</div>
-    <h1 class="subtitle">Evolución de la pandemia de Coronavirus en la ciudad de Burgos. Actualización diaria de la situación de ocupación de los hospitales, nuevos contagios detectados, altas y fallecimientos.</h1>
+    <h1 class="subtitle">Evolución de la pandemia de Coronavirus en la ciudad de Burgos. Actualización diaria de la situación de ocupación de los hospitales, nuevos contagios detectados, altas y fallecimientos.
+        <br>
+        <br>
+        Datos obtenidos del portal <a href="https://analisis.datosabiertos.jcyl.es/pages/coronavirus/">datos abiertos</a> de la Junta de Castilla y León.
+    </h1>
 </header>
+<div class="section-title margin--lateral">Situación actual en el Hospital HUBU</div>
 <section class="margin--lateral widget-container">
-    <app-percentage></app-percentage>
-    <app-percentage></app-percentage>
-    <app-percentage></app-percentage>
-    <app-percentage></app-percentage>
-    <app-percentage></app-percentage>
-    <app-percentage></app-percentage>
+    <div class="widget">
+        <app-percentage class="widget-quantity" [percentage] = 76></app-percentage>
+        <div class="widget-label">Ocupación UCI</div>
+    </div>
+    <div class="widget">
+        <app-percentage class="widget-quantity" [percentage] = 55></app-percentage>
+        <div class="widget-label">Ocupación Planta</div>
+    </div>
+    <div class="widget">
+        <div class="widget-quantity"><span class="widget-quantity--number">+1</span></div>
+        <div class="widget-label">Nuevos Fallecidos</div>
+    </div>
+    <div class="widget">
+        <div class="widget-quantity"><span class="widget-quantity--number">+12</span></div>
+        <div class="widget-label">Nuevas Altas</div>
+    </div>
 </section>
-<div class="section-title margin--lateral">Consulta la evolución de la enfermedad</div>
+<div class="section-title margin--lateral">Consulta las gráficas con la evolución de la enfermedad</div>
 <section class="card-container margin--lateral">
     <mat-card *ngFor="let graph of graphs" (click)="onGraphClicked(graph.url)" matRipple class="card">
         <mat-card-header>

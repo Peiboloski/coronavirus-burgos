@@ -8,6 +8,10 @@
     justify-content: space-between
     min-height: 100vh
 
+a
+    color: $color--link
+    text-decoration: none
+
 .main
      position: relative
      padding: 40px 0 0
@@ -43,7 +47,9 @@
     font-weight: 100
     margin-top: 40px
     margin-top: min(20vh, 100px)
-    @include  fluid-font-size(20px, 30px)
+    margin-bottom: 40px
+    @include  fluid-font-size(20px, 40px)
+    text-align: center
 
 .widget-container 
   display: grid
@@ -52,20 +58,48 @@
   &::before
     content: ''
     width: 0px
-    padding-top: 100%
+    padding-top: 120%
     grid-row: 1 / 1
     grid-column: 1 / 1
   *:first-child 
     grid-row: 1 / 1
     grid-column: 1 / 1
+.widget
+    display: flex
+    flex-direction: column
+    justify-items: center
+    align-items: center
+    margin-top: 20px
+    padding: 5px
+    .widget-quantity
+        display: flex
+        justify-items: center
+        align-items: center
+        height: 80%
+        width: 100%
+        max-width: 250px
+        max-height: 250px
+        .widget-quantity--number
+            margin: auto
+            color: $color-grey
+            font-weight: 100
+            @include  fluid-font-size(70px, 150px)
+    .widget-label
+        height: 20%
+        color: $color-blue--light
+        font-weight: 100
+        @include  fluid-font-size(15px, 25px)
+        padding: 5px
+        text-align: center
+
 
 
 .card-container 
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr))
 
   .card 
-    margin: 40px 40px 0 0
+    margin: 40px 20px 0 20px
     flex: 1 1 0
     cursor: pointer
     &:hover 
@@ -97,9 +131,6 @@
     p
         margin: auto
         color: $color-grey
-        a
-            color: $color-blue
-            text-decoration: none
 
 
 
