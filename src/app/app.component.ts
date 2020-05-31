@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
+import BackendService, { WidgetData } from './backend/backendService';
 
 interface GraphLink {
   title: string,
@@ -60,9 +61,17 @@ const GRAPHS: GraphLink[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public graphs = GRAPHS;
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  public percentageUci;
+  public percentagePlanta;
+  public nuevasAltas;
+  public nuevasMuertes;
+  public updateDate;
+  constructor(
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
+    private _backendService: BackendService) {
     iconRegistry
       .addSvgIcon(
         'hospital',
@@ -71,6 +80,17 @@ export class AppComponent {
         'location',
         sanitizer.bypassSecurityTrustResourceUrl('assets/icons/location.svg'))
         ;
+  }
+
+  public  ngOnInit(): void {
+    this._backendService.getWidgetsData().subscribe((data: WidgetData) => {
+      this.percentageUci = Math.round(100 *(data.hospitalizadosuci / data.disponiblesuci));
+      this.percentagePlanta = Math.round(100 *(data.hospitalizados / data.disponiblesplanta));
+      this.nuevasAltas = data.altas;
+      this.nuevasMuertes = data.muertes;
+      this.updateDate = data.date.day + "/"+ data.date.month + "/"+ data.date.year
+    });
+
   }
 
   public onGraphClicked(url: string) {

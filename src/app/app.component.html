@@ -8,21 +8,22 @@
     </h1>
 </header>
 <div class="section-title margin--lateral">Situación actual en el Hospital HUBU</div>
+<div class="widget-update-date">Actualizado {{updateDate}}</div>
 <section class="margin--lateral widget-container">
     <div class="widget">
-        <app-percentage class="widget-quantity" [percentage] = 76></app-percentage>
+        <app-percentage class="widget-quantity" [percentage] = percentageUci></app-percentage>
         <div class="widget-label">Ocupación UCI</div>
     </div>
     <div class="widget">
-        <app-percentage class="widget-quantity" [percentage] = 55></app-percentage>
+        <app-percentage class="widget-quantity" [percentage] = percentagePlanta></app-percentage>
         <div class="widget-label">Ocupación Planta</div>
     </div>
     <div class="widget">
-        <div class="widget-quantity"><span class="widget-quantity--number">+1</span></div>
+        <div class="widget-quantity"><span class="widget-quantity--number">+{{nuevasMuertes}}</span></div>
         <div class="widget-label">Nuevos Fallecidos</div>
     </div>
     <div class="widget">
-        <div class="widget-quantity"><span class="widget-quantity--number">+12</span></div>
+        <div class="widget-quantity"><span class="widget-quantity--number">+{{nuevasAltas}}</span></div>
         <div class="widget-label">Nuevas Altas</div>
     </div>
 </section>

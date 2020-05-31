@@ -9,11 +9,15 @@
     "rewrites": [
       {
         "source": "**",
+        "destination": "/index.html",
         "headers": [ {
           "key": "Cache-Control",
-          "value": "max-age=60"
-        } ],
-        "destination": "/index.html"
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "Mon, 22 Jul 2002 11:12:01 GMT"
+        }  ]
       },
       {
         "source": "sitemap.xml",

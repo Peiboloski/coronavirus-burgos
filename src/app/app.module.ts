@@ -10,7 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { PercentageComponent } from './percentage/percentage.component';
+import { PercentageComponent } from './components/percentage/percentage.component';
+import BackendService from './backend/backendService';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,8 @@ import { PercentageComponent } from './percentage/percentage.component';
     MatRippleModule,
     MatIconModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
