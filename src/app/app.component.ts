@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
   public nuevasAltas;
   public nuevasMuertes;
   public updateDate;
+  public isWidgetLoaded = false;
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
@@ -88,7 +89,8 @@ export class AppComponent implements OnInit {
       this.percentagePlanta = Math.round(100 *(data.hospitalizados / data.disponiblesplanta));
       this.nuevasAltas = data.altas;
       this.nuevasMuertes = data.muertes;
-      this.updateDate = data.date.day + "/"+ data.date.month + "/"+ data.date.year
+      this.updateDate = data.date.day + "/"+ data.date.month + "/"+ data.date.year;
+      this.isWidgetLoaded = true;
     });
 
   }

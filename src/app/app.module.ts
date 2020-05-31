@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PercentageComponent } from './components/percentage/percentage.component';
 import BackendService from './backend/backendService';
 
@@ -26,6 +27,7 @@ import BackendService from './backend/backendService';
     MatCardModule,
     MatRippleModule,
     MatIconModule,
+  MatProgressSpinnerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [BackendService],

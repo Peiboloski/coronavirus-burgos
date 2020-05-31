@@ -1,45 +1,56 @@
 <div class="main">
-<header class="header margin--lateral">
+  <header class="header margin--lateral">
     <div class="title">Coronavirus Burgos</div>
-    <h1 class="subtitle">Evolución de la pandemia de Coronavirus en la ciudad de Burgos. Actualización diaria de la situación de ocupación de los hospitales, nuevos contagios detectados, altas y fallecimientos.
-        <br>
-        <br>
-        Datos obtenidos del portal <a href="https://analisis.datosabiertos.jcyl.es/pages/coronavirus/">datos abiertos</a> de la Junta de Castilla y León.
+    <h1 class="subtitle">Evolución de la pandemia de Coronavirus en la ciudad de Burgos. Actualización diaria de la
+      situación de ocupación de los hospitales, nuevos contagios detectados, altas y fallecimientos.
+      <br>
+      <br>
+      Datos obtenidos del portal <a href="https://analisis.datosabiertos.jcyl.es/pages/coronavirus/">datos abiertos</a>
+      de la Junta de Castilla y León.
     </h1>
-</header>
-<div class="section-title margin--lateral">Situación actual en el Hospital HUBU</div>
-<div class="widget-update-date">Actualizado {{updateDate}}</div>
-<section class="margin--lateral widget-container">
-    <div class="widget">
-        <app-percentage class="widget-quantity" [percentage] = percentageUci></app-percentage>
+  </header>
+  <div class="section-title margin--lateral">Situación actual en el Hospital HUBU</div>
+  <ng-container *ngIf="isWidgetLoaded else spinner">
+    <div class="widget-update-date">Actualizado {{updateDate}}</div>
+    <section class="margin--lateral widget-container">
+      <div class="widget">
+        <app-percentage class="widget-quantity" [percentage]=percentageUci></app-percentage>
         <div class="widget-label">Ocupación UCI</div>
-    </div>
-    <div class="widget">
-        <app-percentage class="widget-quantity" [percentage] = percentagePlanta></app-percentage>
+      </div>
+      <div class="widget">
+        <app-percentage class="widget-quantity" [percentage]=percentagePlanta></app-percentage>
         <div class="widget-label">Ocupación Planta</div>
-    </div>
-    <div class="widget">
+      </div>
+      <div class="widget">
         <div class="widget-quantity"><span class="widget-quantity--number">+{{nuevasMuertes}}</span></div>
         <div class="widget-label">Nuevos Fallecidos</div>
-    </div>
-    <div class="widget">
+      </div>
+      <div class="widget">
         <div class="widget-quantity"><span class="widget-quantity--number">+{{nuevasAltas}}</span></div>
         <div class="widget-label">Nuevas Altas</div>
-    </div>
-</section>
-<div class="section-title margin--lateral">Consulta las gráficas con la evolución de la enfermedad</div>
-<section class="card-container margin--lateral">
+      </div>
+    </section>
+  </ng-container>
+  <ng-template #spinner>
+    <div class="spinner"> <mat-spinner></mat-spinner></div>
+  </ng-template>
+  <div class="section-title margin--lateral">Consulta las gráficas con la evolución de la enfermedad</div>
+  <section class="card-container margin--lateral">
     <mat-card *ngFor="let graph of graphs" (click)="onGraphClicked(graph.url)" matRipple class="card">
-        <mat-card-header>
-            <mat-card-title>{{graph.title}}</mat-card-title>
-            <mat-card-subtitle class="card-subtitle">
-                <div class="tag" *ngIf="graph.location"><mat-icon class="icon" svgIcon="location"></mat-icon><span>{{graph.location}}</span></div>
-                <div class="tag" *ngIf="graph.hospital"><mat-icon class="icon" svgIcon="hospital"></mat-icon><span>{{graph.hospital}}</span></div>
-            </mat-card-subtitle>
-          </mat-card-header>
+      <mat-card-header>
+        <mat-card-title>{{graph.title}}</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">
+          <div class="tag" *ngIf="graph.location">
+            <mat-icon class="icon" svgIcon="location"></mat-icon><span>{{graph.location}}</span>
+          </div>
+          <div class="tag" *ngIf="graph.hospital">
+            <mat-icon class="icon" svgIcon="hospital"></mat-icon><span>{{graph.hospital}}</span>
+          </div>
+        </mat-card-subtitle>
+      </mat-card-header>
     </mat-card>
-</section>
+  </section>
 </div>
 <footer class="footer">
-    <p>Made by <a href="https://www.linkedin.com/in/pablodelgadogarcia/ " rel="nofollow">@peiboloski</a></p>
+  <p>Made by <a href="https://www.linkedin.com/in/pablodelgadogarcia/ " rel="nofollow">@peiboloski</a></p>
 </footer>
