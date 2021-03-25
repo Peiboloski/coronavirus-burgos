@@ -1,6 +1,8 @@
 # CoronavirusBurgos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+Simple web to check the updated state of the pandemic in Burgos.
+
+SITE URL --> https://coronavirusburgos.web.app/
 
 ## Development server
 
